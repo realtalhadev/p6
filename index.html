@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Share Button Tooltip</title>
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            height:100vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            background:linear-gradient(135deg,#4e73df,#1cc88a);
+        }
+
+        .share-container{
+            position:relative;
+        }
+
+        .share-btn{
+            padding:12px 40px;
+            border:none;
+            border-radius:30px;
+            background:#fff;
+            color:#333;
+            font-weight:bold;
+            letter-spacing:1px;
+            cursor:pointer;
+        }
+
+        /* Tooltip Box */
+        .social-icons{
+            position:absolute;
+            bottom:60px;
+            left:50%;
+            transform:translateX(-50%);
+            background:#fff;
+            padding:10px 20px;
+            border-radius:40px;
+            display:flex;
+            gap:15px;
+            opacity:0;
+            pointer-events:none;
+            transition:0.3s ease;
+        }
+
+        /* Triangle pointer */
+        .social-icons::after{
+            content:"";
+            position:absolute;
+            bottom:-10px;
+            left:50%;
+            transform:translateX(-50%);
+            border-width:10px 10px 0 10px;
+            border-style:solid;
+            border-color:#fff transparent transparent transparent;
+        }
+
+        .social-icons a{
+            color:#555;
+            font-size:18px;
+            transition:0.3s;
+        }
+
+        .social-icons a:hover{
+            color:#4e73df;
+            transform:scale(1.2);
+        }
+
+        /* Show on Hover */
+        .share-container:hover .social-icons{
+            opacity:1;
+            bottom:70px;
+            pointer-events:auto;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="share-container">
+        <button class="share-btn">SHARE</button>
+
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+    </div>
+
+</body>
+</html>
